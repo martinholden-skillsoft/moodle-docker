@@ -1,8 +1,17 @@
 @ECHO OFF
-
-@ECHO OFF
 :: the first parameter is an optional version
 IF "%1"=="" ( SET "MOODLE_DOCKER_PHP_VERSION=7.2" ) ELSE ( SET "MOODLE_DOCKER_PHP_VERSION=%1" )
+
+echo.
+echo **************************************************
+echo *** Running: %~n0%~x0
+echo *** Parameters: %*
+echo.
+echo *** Moodle Version: %MOODLE_VERSION%
+echo *** Moodle DB: %MOODLE_DOCKER_DB%
+echo *** Moodle PHP: %MOODLE_DOCKER_PHP_VERSION%
+echo.
+
 
 PUSHD %cd%
 CD %~dp0..
@@ -32,6 +41,24 @@ IF "%MOODLE_DOCKER_DB%"=="pgsql" (
 	echo *** pgAdmin4 is running please. Browse to - http://127.0.0.1:5050
 	echo *** pgAdmin4 User: user@domain.com
 	echo *** pgAdmin4 Password: SuperSecret
+	echo.
+	echo *** Moodle Database Username: moodle
+	echo *** Moodle Database Username: m@0dl3ing
+	echo.
+)
+
+IF "%MOODLE_DOCKER_DB%"=="MYSQL" (
+	echo.
+	echo *** phpMyadmin is running please. Browse to - http://127.0.0.1:5050
+	echo.
+	echo *** Moodle Database Username: moodle
+	echo *** Moodle Database Username: m@0dl3ing
+	echo.
+)
+
+IF "%MOODLE_DOCKER_DB%"=="MARIADB" (
+	echo.
+	echo *** phpMyadmin is running please. Browse to - http://127.0.0.1:5050
 	echo.
 	echo *** Moodle Database Username: moodle
 	echo *** Moodle Database Username: m@0dl3ing
