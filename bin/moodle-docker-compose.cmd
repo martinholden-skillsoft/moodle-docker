@@ -1,4 +1,13 @@
 @ECHO OFF
+echo.
+echo **************************************************
+echo *** Running: %~n0%~x0
+echo *** Parameters: %*
+echo.
+echo *** Moodle Version: %MOODLE_VERSION%
+echo *** Moodle DB: %MOODLE_DOCKER_DB%
+echo *** Moodle PHP: %MOODLE_DOCKER_PHP_VERSION%
+echo.
 
 IF NOT EXIST "%MOODLE_DOCKER_WWWROOT%" (
     ECHO Error: MOODLE_DOCKER_WWWROOT is not set or not an existing directory
@@ -6,8 +15,7 @@ IF NOT EXIST "%MOODLE_DOCKER_WWWROOT%" (
 )
 
 IF "%MOODLE_DOCKER_DB%"=="" (
-    ECHO Error: MOODLE_DOCKER_DB is not set
-    EXIT /B 1
+    SET MOODLE_DOCKER_DB=pgsql
 )
 
 PUSHD %cd%
@@ -25,9 +33,7 @@ IF "%MOODLE_DOCKER_PHP_VERSION%"=="" (
     SET MOODLE_DOCKER_PHP_VERSION=7.2
 )
 
-IF NOT "%MOODLE_DOCKER_DB%"=="pgsql" (
-    SET DOCKERCOMPOSE=%DOCKERCOMPOSE% -f "%BASEDIR%\db.%MOODLE_DOCKER_DB%.yml"
-)
+SET DOCKERCOMPOSE=%DOCKERCOMPOSE% -f "%BASEDIR%\db.%MOODLE_DOCKER_DB%.yml"
 
 SET filename=%BASEDIR%\db.%MOODLE_DOCKER_DB%.%MOODLE_DOCKER_PHP_VERSION%.yml
 if exist %filename% (
