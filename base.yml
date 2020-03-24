@@ -28,14 +28,4 @@ services:
     image: "selenium/standalone-firefox${MOODLE_DOCKER_SELENIUM_SUFFIX}:2.53.1"
     volumes:
       - "${MOODLE_DOCKER_WWWROOT}:/var/www/html:ro"
-  pgadmin4:
-    image: "dpage/pgadmin4"
-    depends_on:
-      - db
-    environment:
-      PGADMIN_DEFAULT_EMAIL: "user@domain.com"
-      PGADMIN_DEFAULT_PASSWORD: "SuperSecret"
-    volumes:
-      - "${ASSETDIR}/pgadmin4/servers.json:/pgadmin4/servers.json"
-    ports:
-      - "5050:80"
+
