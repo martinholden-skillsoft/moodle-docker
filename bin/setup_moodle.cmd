@@ -39,6 +39,7 @@ echo *** Remove all uncommited local files in %MOODLE_DOCKER_WWWROOT%
 echo.
 git clean -df
 git clean -df
+git clean -df
 echo.
 echo *** Reset in %MOODLE_DOCKER_WWWROOT%
 echo.
