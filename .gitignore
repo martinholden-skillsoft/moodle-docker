@@ -1,1 +1,7 @@
 assets/moodle_*
+bin/copy_moodletools.cmd
+bin/setup_devtools.cmd
+bin/setup_modules.cmd
+bin/start_uploadexternalcontent_cli.cmd
+bin/start_uploadexternalcontentresults_cli.cmd
+bin/start_uploadpageresults_cli.cmd
