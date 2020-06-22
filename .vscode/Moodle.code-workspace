@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "..\\assets\\moodle_files\\admin\\tool\\uploadexternalcontent"
+		},
+		{
+			"path": "..\\assets\\moodle_files\\admin\\tool\\uploadexternalcontentresults"
+		},
+		{
+			"path": "..\\assets\\moodle_files\\mod\\externalcontent"
+		}
+	],
+	"settings": {}
+}
