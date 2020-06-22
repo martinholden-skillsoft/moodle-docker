@@ -5,3 +5,4 @@ bin/setup_modules.cmd
 bin/start_uploadexternalcontent_cli.cmd
 bin/start_uploadexternalcontentresults_cli.cmd
 bin/start_uploadpageresults_cli.cmd
+containerid.txt
