@@ -13,5 +13,7 @@
 			"path": "..\\assets\\moodle_files\\mod\\externalcontent"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"scm.alwaysShowProviders": true
+	}
 }
