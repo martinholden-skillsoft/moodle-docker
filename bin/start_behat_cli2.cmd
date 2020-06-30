@@ -7,6 +7,8 @@ IF "%BEHAT_TAG%"=="UNKNOWN" (
     EXIT /B 1
 )
 
+
+
 echo.
 echo **************************************************
 echo *** Running: %~n0%~x0
@@ -17,11 +19,6 @@ PUSHD %cd%
 CD %~dp0..
 SET BASEDIR=%cd%
 POPD
-
-echo.
-echo *** Moodle CLI Script: admin/tool/behat/cli/init.php
-call %BASEDIR%\bin\moodle-docker-compose exec webserver php admin/tool/behat/cli/init.php
-echo.
 
 echo.
 echo *** Moodle CLI Script: admin/tool/behat/cli/run.php --tags=%BEHAT_TAG% --format="pretty"
