@@ -1,0 +1,6 @@
+
+bin\start_phpunit_cli.cmd tool_uploadpage_importer_testcase admin/tool/uploadpage/tests/importer_test.php
+bin\start_behat_cli @tool_uploadpage
+
+bin\start_phpunit_cli tool_uploadpageresults_importer_testcase admin/tool/uploadpageresults/tests/importer_test.php
+bin\start_behat_cli @tool_uploadpageresults

@@ -1,0 +1,5 @@
+{
+  "phpcs.ignorePatterns": [
+    "*/moodle_files/moodle_*"
+  ]
+}
