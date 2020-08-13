@@ -2,6 +2,7 @@
 :: the first parameter is an optional version
 IF "%1"=="" ( SET "MOODLE_VERSION=MOODLE_38_STABLE" ) ELSE ( SET "MOODLE_VERSION=%1" )
 IF "%2"=="" ( SET "MOODLE_DOCKER_DB=pgsql" ) ELSE ( SET "MOODLE_DOCKER_DB=%2" )
+IF "%3"=="" ( SET "MOODLE_DOCKER_PHP_VERSION=7.2" ) ELSE ( SET "MOODLE_DOCKER_PHP_VERSION=%3" )
 
 echo.
 echo **************************************************
