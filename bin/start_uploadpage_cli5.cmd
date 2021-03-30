@@ -20,5 +20,5 @@ SET BASEDIR=%cd%
 POPD
 
 echo.
-call %BASEDIR%\bin\moodle-docker-compose exec webserver php admin/tool/uploadpage/cli/uploadpage.php --source=../../../../%MOODLE_UPLOAD_FILE% --categoryid=%MOODLE_UPLOAD_CATEGORYID% -d=tab
+call %BASEDIR%\bin\moodle-docker-compose exec webserverdev php admin/tool/uploadpage/cli/uploadpage.php --source=../../../../%MOODLE_UPLOAD_FILE% --categoryid=%MOODLE_UPLOAD_CATEGORYID% -d=tab
 echo.

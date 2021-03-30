@@ -6,7 +6,7 @@ $CFG = new stdClass();
 
 $CFG->dbtype    = getenv('MOODLE_DOCKER_DBTYPE');
 $CFG->dblibrary = 'native';
-$CFG->dbhost    = 'db';
+$CFG->dbhost    = 'dbdev';
 $CFG->dbname    = getenv('MOODLE_DOCKER_DBNAME');
 $CFG->dbuser    = getenv('MOODLE_DOCKER_DBUSER');
 $CFG->dbpass    = getenv('MOODLE_DOCKER_DBPASS');
@@ -44,15 +44,15 @@ $CFG->passwordpolicy = 0;
 
 $CFG->phpunit_dataroot  = '/var/www/phpunitdata';
 $CFG->phpunit_prefix = 't_';
-define('TEST_EXTERNAL_FILES_HTTP_URL', 'http://exttests');
+define('TEST_EXTERNAL_FILES_HTTP_URL', 'http://exttestsdev');
 
-$CFG->behat_wwwroot   = 'http://webserver';
+$CFG->behat_wwwroot   = 'http://webserverdev';
 $CFG->behat_dataroot  = '/var/www/behatdata';
 $CFG->behat_prefix = 'b_';
 $CFG->behat_profiles = array(
     'default' => array(
         'browser' => getenv('MOODLE_DOCKER_BROWSER'),
-        'wd_host' => 'http://selenium:4444/wd/hub',
+        'wd_host' => 'http://seleniumdev:4444/wd/hub',
     ),
 );
 $CFG->behat_faildump_path = '/var/www/behatfaildumps';

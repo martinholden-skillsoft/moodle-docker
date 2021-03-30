@@ -32,5 +32,5 @@ SET PHPUNITOPTIONS=%1
 
 echo.
 echo *** Moodle CLI Script: vendor/bin/phpunit %PHPUNITOPTIONS% %PHPUNIT_TESTCASE% %PHPUNIT_PATH%
-call %BASEDIR%\bin\moodle-docker-compose exec webserver vendor/bin/phpunit %PHPUNITOPTIONS% %PHPUNIT_TESTCASE% %PHPUNIT_PATH%
+call %BASEDIR%\bin\moodle-docker-compose exec webserverdev vendor/bin/phpunit %PHPUNITOPTIONS% %PHPUNIT_TESTCASE% %PHPUNIT_PATH%
 echo.

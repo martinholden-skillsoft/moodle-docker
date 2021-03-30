@@ -1,0 +1,10 @@
+version: "2"
+services:
+  solrdev:
+    image: solr:6.5
+    entrypoint:
+      - docker-entrypoint.sh
+      - solr-precreate
+      - moodle
+    ports:
+      - "127.0.0.1:8983:8983"

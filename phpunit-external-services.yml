@@ -1,21 +1,21 @@
 version: "2"
 services:
-  webserver:
-      environment:
-        MOODLE_DOCKER_PHPUNIT_EXTRAS: "true"
-  memcached0:
+  webserverdec:
+    environment:
+      MOODLE_DOCKER_PHPUNIT_EXTRAS: "true"
+  memcacheddev0:
     image: memcached:1.4
-  memcached1:
+  memcacheddev1:
     image: memcached:1.4
-  mongo:
+  mongodev:
     image: mongo:4.0
-  redis:
+  redisdev:
     image: redis:3
-  solr:
+  solrdev:
     image: solr:6.5
     entrypoint:
       - docker-entrypoint.sh
       - solr-precreate
       - test
-  ldap:
+  ldapdev:
     image: larrycai/openldap

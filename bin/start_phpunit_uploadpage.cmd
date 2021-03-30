@@ -18,10 +18,10 @@ SET PHPUNITOPTIONS=%1
 
 echo.
 echo *** Moodle CLI Script: admin/tool/phpunit/cli/init.php
-call %BASEDIR%\bin\moodle-docker-compose exec webserver php admin/tool/phpunit/cli/init.php
+call %BASEDIR%\bin\moodle-docker-compose exec webserverdev php admin/tool/phpunit/cli/init.php
 echo.
 
 echo.
 echo *** Moodle CLI Script: vendor/bin/phpunit %PHPUNITOPTIONS% tool_uploadpage_importer_testcase admin/tool/uploadpage/tests/importer_test.php
-call %BASEDIR%\bin\moodle-docker-compose exec webserver vendor/bin/phpunit %PHPUNITOPTIONS% tool_uploadpage_importer_testcase admin/tool/uploadpage/tests/importer_test.php
+call %BASEDIR%\bin\moodle-docker-compose exec webserverdev vendor/bin/phpunit %PHPUNITOPTIONS% tool_uploadpage_importer_testcase admin/tool/uploadpage/tests/importer_test.php
 echo.

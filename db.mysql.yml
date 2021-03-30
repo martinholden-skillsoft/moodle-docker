@@ -1,10 +1,10 @@
 version: "2"
 services:
-  webserver:
+  webserverdev:
     environment:
       MOODLE_DOCKER_DBTYPE: mysqli
       MOODLE_DOCKER_DBCOLLATION: utf8mb4_bin
-  db:
+  dbdev:
     image: mysql:5
     command: >
                 --character-set-server=utf8mb4
@@ -20,6 +20,6 @@ services:
   dbadmin:
     image: phpmyadmin/phpmyadmin:latest
     depends_on:
-      - db
+      - dbdev
     ports:
       - "5050:80"

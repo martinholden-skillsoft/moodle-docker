@@ -18,5 +18,5 @@ SET BASEDIR=%cd%
 POPD
 
 echo.
-call %BASEDIR%\bin\moodle-docker-compose exec webserver php admin/tool/uploadpageresults/cli/uploadpageresults.php --source=../../../../%MOODLE_UPLOAD_COMPLETIONFILE%
+call %BASEDIR%\bin\moodle-docker-compose exec webserverdev php admin/tool/uploadpageresults/cli/uploadpageresults.php --source=../../../../%MOODLE_UPLOAD_COMPLETIONFILE%
 echo.

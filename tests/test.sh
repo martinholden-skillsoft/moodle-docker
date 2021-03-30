@@ -5,13 +5,13 @@ basedir="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../" && pwd )"
 
 if [ "$SUITE" = "phpunit" ];
 then
-    testcmd="bin/moodle-docker-compose exec -T webserver vendor/bin/phpunit core_dml_testcase lib/dml/tests/dml_test.php"
+    testcmd="bin/moodle-docker-compose exec -T webserverdev vendor/bin/phpunit core_dml_testcase lib/dml/tests/dml_test.php"
 elif [ "$SUITE" = "behat" ];
 then
-    testcmd="bin/moodle-docker-compose exec -T webserver php admin/tool/behat/cli/run.php --tags=@auth_manual"
+    testcmd="bin/moodle-docker-compose exec -T webserverdev php admin/tool/behat/cli/run.php --tags=@auth_manual"
 elif [ "$SUITE" = "phpunit-full" ];
 then
-    testcmd="bin/moodle-docker-compose exec -T webserver vendor/bin/phpunit --verbose"
+    testcmd="bin/moodle-docker-compose exec -T webserverdev vendor/bin/phpunit --verbose"
 else
     echo "Error, unknown suite '$SUITE'"
     exit 1

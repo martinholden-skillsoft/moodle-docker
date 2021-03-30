@@ -1,6 +1,6 @@
 @ECHO OFF
 :: the first parameter is an optional version
-IF "%1"=="" ( SET "MOODLE_DOCKER_PHP_VERSION=7.2" ) ELSE ( SET "MOODLE_DOCKER_PHP_VERSION=%1" )
+IF "%MOODLE_DOCKER_PHP_VERSION%"=="" ( SET "MOODLE_DOCKER_PHP_VERSION=7.4" )
 
 echo.
 echo **************************************************
@@ -25,9 +25,28 @@ call %BASEDIR%\bin\moodle-docker-compose up -d
 echo.
 
 echo.
+echo *** Get Webserverdev Container ID
+echo.
+docker container ls -aqf name=webserverdev > containerid.txt
+set /p containerid=<containerid.txt
+echo %containerid%
+
+echo.
+echo *** Copy extra PHP configuration to webserverdev
+echo.
+docker cp docker-php-limits.ini %containerid%:/usr/local/etc/php/conf.d/docker-php-limits.ini
+echo.
+
+echo.
+echo *** Restart Apache
+echo.
+call %BASEDIR%\bin\moodle-docker-compose exec webserverdev bash -c "/etc/init.d/apache2 reload"
+echo.
+
+echo.
 echo *** Run the Moodle CLI script: admin/cli/install_database.php
 echo.
-call %BASEDIR%\bin\moodle-docker-compose exec webserver php admin/cli/install_database.php --agree-license --fullname="Docker moodle" --shortname="docker_moodle" --adminpass="test" --adminemail="admin@example.com"
+call %BASEDIR%\bin\moodle-docker-compose exec webserverdev php admin/cli/install_database.php --agree-license --fullname="Docker moodle" --shortname="docker_moodle" --adminpass="test" --adminemail="admin@example.com"
 echo.
 
 echo.

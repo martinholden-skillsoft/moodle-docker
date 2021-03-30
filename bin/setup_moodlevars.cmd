@@ -1,6 +1,6 @@
 @ECHO OFF
 :: the first parameter is an optional version
-IF "%1"=="" ( SET "MOODLE_VERSION=MOODLE_38_STABLE" ) ELSE ( SET "MOODLE_VERSION=%1" )
+IF "%1"=="" ( SET "MOODLE_VERSION=MOODLE_39_STABLE" ) ELSE ( SET "MOODLE_VERSION=%1" )
 IF "%2"=="" ( SET "MOODLE_DOCKER_DB=pgsql" ) ELSE ( SET "MOODLE_DOCKER_DB=%2" )
 
 echo.

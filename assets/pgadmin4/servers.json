@@ -5,7 +5,7 @@
             "Group": "Servers",
             "Port": 5432,
             "Username": "moodle",
-            "Host": "db",
+            "Host": "dbdev",
             "SSLMode": "prefer",
             "MaintenanceDB": "postgres"
         }

@@ -20,12 +20,12 @@ POPD
 
 echo.
 echo *** Moodle CLI Script: admin/tool/behat/cli/init.php
-call %BASEDIR%\bin\moodle-docker-compose exec webserver php admin/tool/behat/cli/init.php
+call %BASEDIR%\bin\moodle-docker-compose exec webserverdev php admin/tool/behat/cli/init.php
 echo.
 
 echo.
 echo *** Moodle CLI Script: admin/tool/behat/cli/run.php --tags=%BEHAT_TAG% --format="pretty"
-call %BASEDIR%\bin\moodle-docker-compose exec -u www-data webserver php admin/tool/behat/cli/run.php --tags=%BEHAT_TAG% --format="pretty"
+call %BASEDIR%\bin\moodle-docker-compose exec -u www-data webserverdev php admin/tool/behat/cli/run.php --tags=%BEHAT_TAG% --format="pretty"
 echo.
 
 

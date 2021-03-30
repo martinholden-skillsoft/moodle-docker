@@ -1,9 +1,9 @@
 version: "2"
 services:
-  webserver:
+  webserverdev:
     image: "moodlehq/moodle-php-apache:${MOODLE_DOCKER_PHP_VERSION}"
     depends_on:
-      - db
+      - dbdev
     volumes:
       - "${MOODLE_DOCKER_WWWROOT}:/var/www/html"
       - "${ASSETDIR}/web/apache2_faildumps.conf:/etc/apache2/conf-enabled/apache2_faildumps.conf"
@@ -14,7 +14,7 @@ services:
       MOODLE_DOCKER_DBPASS: "m@0dl3ing"
       MOODLE_DOCKER_BROWSER: firefox
       MOODLE_DOCKER_WEB_HOST: "${MOODLE_DOCKER_WEB_HOST}"
-  db:
+  dbdev:
     image: postgres:11-alpine
     environment:
       POSTGRES_USER: moodle
@@ -22,9 +22,9 @@ services:
       POSTGRES_DB: moodle
     ports:
       - "127.0.0.1:5432:5432"
-  exttests:
+  exttestsdev:
     image: moodlehq/moodle-exttests
-  selenium:
+  seleniumdev:
     image: "selenium/standalone-firefox${MOODLE_DOCKER_SELENIUM_SUFFIX}:2.53.1"
     volumes:
       - "${MOODLE_DOCKER_WWWROOT}:/var/www/html:ro"

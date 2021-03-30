@@ -1,9 +1,9 @@
 version: "2"
 services:
-  webserver:
+  webserverdev:
     environment:
       MOODLE_DOCKER_DBTYPE: pgsql
-  db:
+  dbdev:
     image: postgres:11-alpine
     environment:
       POSTGRES_USER: moodle
@@ -11,10 +11,10 @@ services:
       POSTGRES_DB: moodle
     ports:
       - "127.0.0.1:5432:5432"
-  dbadmin:
+  dbadmindev:
     image: "dpage/pgadmin4"
     depends_on:
-      - db
+      - dbdev
     environment:
       PGADMIN_DEFAULT_EMAIL: "user@domain.com"
       PGADMIN_DEFAULT_PASSWORD: "SuperSecret"
